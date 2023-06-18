@@ -19,6 +19,9 @@ mongoose.connect('mongodb+srv://gautamkumarg660:5zwEybYo5LpYc7oC@cluster0.v4nuhr
     console.log("dataBase is Connected")
 }).catch((err) => { console.log(err) })
 
+app.get("/", (req,res) =>{
+    res.send("Welcome to hotel server")
+})
 // middleware 
 app.use(cookieParser())
 app.use(express.json())
@@ -40,5 +43,4 @@ app.use((err, req, res, next) => {
 
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
-    console.log("server is listning at 3001")
-})
+ console.log("server is listning at port->", port)
